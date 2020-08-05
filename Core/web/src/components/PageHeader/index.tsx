@@ -9,9 +9,11 @@ import './styles.css';
 
 interface Props {
     title: String;
+    description?: String;
 }
 const PageHeader: React.FC<Props> = ({
     title,
+    description,
     children
 }) => {
     return (
@@ -26,7 +28,8 @@ const PageHeader: React.FC<Props> = ({
                 <strong>
                     {title}
                 </strong>
-            {children}
+                {description && <p>{description}</p>}
+                {children}
             </div>
         </header>
     );
